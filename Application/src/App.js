@@ -1,10 +1,16 @@
 import './App.css';
-import CreateCard from "./Component/Card"
+import CreateCard from "./Component/Card";
+import Nav from './Component/Nav';
+import Footer from './Component/Footer';
+import Profile from './Component/Profile';
+
 
 function App() {
   return (
     <div className="App">
-      <div className="card"><CreateCard
+      <Nav/>
+      <div className="card">
+        <CreateCard
         img="https://i.pinimg.com/originals/e3/7e/0e/e37e0e25686c2139b281a57a5b4906f2.jpg"
          name="Micheal"
          gender="Male"
@@ -25,6 +31,8 @@ function App() {
          gender="Male"
          />
          </div>
+         <Profile/>
+         <Footer/>
     </div>
   );
 }
