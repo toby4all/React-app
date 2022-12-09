@@ -13,20 +13,21 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end
+    align-items: center;
+    color:orange;
 
 };
  #h3{
     font-size:xx-large;
     font-weight: bolder;
-    color: burlywood
+    color: black;
 };
- #p1{
+ .p1{
     font-style: italic;
     color: brown
 };
- #btn{padding: 5px;
+ .btn{padding: 5px;
     border-radius: 10px;
     background-color:black;
-    color: blanchedalmond;
+    color:orange;
 };
