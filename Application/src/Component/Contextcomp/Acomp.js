@@ -1,5 +1,5 @@
 import React from "react";
-import B from "./Bcomp";
+import B from './Bcomp'
 import myContext from "./context";
 
 function A(props) {

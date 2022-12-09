@@ -19,8 +19,8 @@ var Nav=()=>{
         </Link>
         <Link style={astyle} to="/Profile">Profile</Link>
         <Link style={astyle} to="/Products">Product</Link>
-        <Link style={astyle} to="/context">Context</Link>
-        <Link style={astyle} to="">Contact us</Link>
+        <Link style={astyle} to="Acomp">Context</Link>
+        <Link style={astyle} to="/Parent">Contact us</Link>
       </div>
      </div>
     );

@@ -1,6 +1,6 @@
 import Nav from "./Component/Nav"
 import "./App2.css";
-import A from "./Component/context/Acomp";
+import A from "./Component/Contextcomp/Acomp";
 import Parent from "./Component/Parent/Parent";
 import MainProfile from "./Component/Profile/Mainprofile";
 import HomeProduct from "./Component/Products/Homeproduct";
@@ -12,13 +12,13 @@ import {Route, Routes} from "react-router-dom"
 
 function App2(){
     return(
-    <div classname="container">
+    <div className="container">
       <Nav/>
      <Routes>
       <Route path="/Homepage" element={<Home/>}></Route>
         <Route path="/Profile" element={<MainProfile/>}> 
         </Route>
-        <Route path="/contex" element={<A/>}> 
+        <Route path="Acomp" element={<A/>}> 
         </Route>
         <Route path="/Parent" element={<Parent/>}> 
         </Route>
