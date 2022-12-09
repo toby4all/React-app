@@ -1,0 +1,10 @@
+.mainStyle{ width: 100%;
+    margin: 0px;
+    height: 100vh;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpIop-7V3nFUM0lI2jTadChWCluhMq4syhXA&usqp=CAU);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+
+}

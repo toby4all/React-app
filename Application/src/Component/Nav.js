@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 var Nav=()=>{
     var navstyle = {
       backgroundColor: "black",
@@ -11,14 +12,17 @@ var Nav=()=>{
       marginRight: "20px"
     };
     return (
-      <div style={navstyle}>
-        <a style={astyle} href="">
+     <div className="mainstyle">
+       <div style={navstyle}>
+        <Link style={astyle} to="./Homepage">
           Home
-        </a>
-        <a style={astyle} href="">services</a>
-        <a style={astyle} href="">Profile</a>
-        <a style={astyle} href="">Contact us</a>
+        </Link>
+        <Link style={astyle} to="/Profile">Profile</Link>
+        <Link style={astyle} to="/Products">Product</Link>
+        <Link style={astyle} to="/context">Context</Link>
+        <Link style={astyle} to="">Contact us</Link>
       </div>
+     </div>
     );
   }
 export default Nav;
