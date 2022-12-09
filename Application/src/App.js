@@ -2,7 +2,7 @@ import './App.css';
 import CreateCard from "./Component/Card";
 import Nav from './Component/Nav';
 import Footer from './Component/Footer';
-import Profile from './Component/Profile';
+import Mainprofile from './Component/Profile comp/Mainprofle';
 
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
          gender="Male"
          />
          </div>
-         <Profile/>
+         <Mainprofile/>
          <Footer/>
     </div>
   );

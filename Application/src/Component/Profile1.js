@@ -7,40 +7,37 @@ var Profile= ()=>{
     img:'https://media.istockphoto.com/id/466901292/pl/zdj%C4%99cie/pewnie-biznesmen-portret.jpg?s=612x612&w=0&k=20&c=Uy3EiRVemNCKo4H6UIE53cmYGO8SlUBVoKKYXGBUec4='
     });
   
-    let[Mode, setmode]= useState({text:'check to swtch to dark mode'
-    }
-    );
-    function updatefemaleProfile(){
+    let[Mode, setmode]= useState('check to swtch to dark mode');
+    let[bgColor, setbgColor]= useState('white')
+    let[textColor, setTextColor]= useState('black')
+    const updateProfile=(event)=>{
+        if(event.value.innerText==="Jackson"){
         setData({
             Firstame:'Lesley',
             Lastname:'Willock',
             Email: 'les345@gmail.com',
             img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdnDEtdNgL2U_zT-ocSMydONOTICURLsX0HQ&usqp=CAU" 
         });
-       
+    } else{ setData({Firstame:'Jackson',
+    Lastname:'Martinez',
+    Email: 'kacs@gmail.com',
+    img:'https://media.istockphoto.com/id/466901292/pl/zdj%C4%99cie/pewnie-biznesmen-portret.jpg?s=612x612&w=0&k=20&c=Uy3EiRVemNCKo4H6UIE53cmYGO8SlUBVoKKYXGBUec4='})
+    }
     };
-    const updatemaleProfile= ()=>{
-        setData({Firstame:'Jackson',
-        Lastname:'Martinez',
-        Email: 'kacs@gmail.com',
-        img:'https://media.istockphoto.com/id/466901292/pl/zdj%C4%99cie/pewnie-biznesmen-portret.jpg?s=612x612&w=0&k=20&c=Uy3EiRVemNCKo4H6UIE53cmYGO8SlUBVoKKYXGBUec4='})
-    };
-    var changeMode =()=>{
-        var input= document.getElementById('input')
-        var Mainref= document.getElementById('maindiv')
-        if(input.checked){setmode(
-            {text:'uncheck to switch light mode',Mainref:{style:{
-                backroundColor: 'orange',
-                color:'white',
-                margin:'25px',
-                textAlign:'center',
-                paddingRight: '20px'
-            }}})
+
+    var changeMode =(event)=>{
+        if(event.target.checked)
+        {setmode('uncheck to switch light mode');
+            setbgColor('black');
+            setTextColor('white')
            }
             else{
                 setmode(
-                    {text:'check to switch dark mode'})}
+                'check to switch dark mode')
+                setbgColor('white');
+            setData('white');
         }
+        };
 
         var constyle={width:'500px',
         textAlign:'center',
@@ -54,7 +51,8 @@ var Profile= ()=>{
     };
     
     return(
-            <div id="maindiv" style={Mode.Mainref}
+            <div style={{backroundColor:bgColor,
+               Color: textColor}}
             >
              <div style={constyle}> 
              <img src={data.img} height='400px' width='300px'/>
@@ -83,13 +81,13 @@ var Profile= ()=>{
                 }}>
                  <input style={{
                  }} 
-                 type='checkbox' onClick={changeMode} id='input'/>{Mode.text}
+                 type='checkbox' onChange={changeMode}/>{Mode}
                 <button style={
                     {
                     margin:"0px 20px"
                 }}
-                onClick={updatemaleProfile}>Jackson</button> 
-                 <span><button onClick={updatefemaleProfile}> Lesley</button></span>
+                onClick={updateProfile}>Jackson</button> 
+                 <button onClick={updateProfile}>Lesley</button>
                  </div>
             </div>
     );

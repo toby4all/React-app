@@ -1,0 +1,32 @@
+.divContainer{
+    width: 100%;
+    margin:auto;
+    height: 90vh;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpIop-7V3nFUM0lI2jTadChWCluhMq4syhXA&usqp=CAU);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position: top;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end
+
+};
+ #h3{
+    font-size:xx-large;
+    font-weight: bolder;
+    color: burlywood
+};
+ #p1{
+    font-style: italic;
+    color: brown
+};
+ #btn{padding: 5px;
+    border-radius: 10px;
+    background-color:black;
+    color: blanchedalmond;
+};

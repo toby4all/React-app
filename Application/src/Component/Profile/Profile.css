@@ -1,0 +1,14 @@
+ .profileContainer{
+    width: 1000px;
+    height: 400px;
+    margin: 50px auto;
+    display: flex;
+    };
+   
+
+   .btn{
+    background-color: black;
+    color: whitesmoke;
+    border: 2px solid black;
+    /* border-radius: 50px; */
+    };
