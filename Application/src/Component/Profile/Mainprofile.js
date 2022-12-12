@@ -106,7 +106,7 @@ function MainProfile(props) {
         <button onClick={changeData}>Lesley</button>
         <br />
         <br />
-        <input type="checkbox" onChange={changeColor} /> {textChange}
+        <input type="checkbox" onChange={changeColor}/> {textChange}
       </div>
     </div>
   );

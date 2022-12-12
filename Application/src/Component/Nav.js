@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Home from "./Homepage/Home";
 var Nav=()=>{
     var navstyle = {
       backgroundColor: "black",
@@ -21,7 +22,9 @@ var Nav=()=>{
         <Link style={astyle} to="/Products">Product</Link>
         <Link style={astyle} to="Acomp">Context</Link>
         <Link style={astyle} to="/Parent">Contact us</Link>
+        <Link style={astyle} to = "/class">More</Link>
       </div>
+      <div>{<Home/>}</div>
      </div>
     );
   }

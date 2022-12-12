@@ -1,12 +1,13 @@
 import Nav from "./Component/Nav"
 import "./App2.css";
 import A from "./Component/Contextcomp/Acomp";
-import Parent from "./Component/Parent/Parent";
 import MainProfile from "./Component/Profile/Mainprofile";
+import Parent from "./Component/Parent/Parent";
 import HomeProduct from "./Component/Products/Homeproduct";
 import Home from "./Component/Homepage/Home";
 import Jewelery from "./Component/Products/Jewelery";
 import Electronic from "./Component/Products/Electronic";
+import Imagecomp from "./Component/class/image";
 import {Route, Routes} from "react-router-dom"
 
 
@@ -20,7 +21,9 @@ function App2(){
         </Route>
         <Route path="Acomp" element={<A/>}> 
         </Route>
-        <Route path="/Parent" element={<Parent/>}> 
+        <Route path="/parent" element={<Parent/>}> 
+        </Route>
+        <Route path="/class" element={<Imagecomp/>}> 
         </Route>
         <Route path="/Products" element={<HomeProduct/>}>
          <Route path="Electronic" element={<Electronic/>}/>
