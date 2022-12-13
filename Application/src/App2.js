@@ -8,6 +8,8 @@ import Home from "./Component/Homepage/Home";
 import Jewelery from "./Component/Products/Jewelery";
 import Electronic from "./Component/Products/Electronic";
 import Imagecomp from "./Component/class/image";
+import Input from "./Component/Redux/input";
+import ReceiverComp from "./Component/Redux/Text";
 import {Route, Routes} from "react-router-dom"
 
 
@@ -25,6 +27,10 @@ function App2(){
         </Route>
         <Route path="/class" element={<Imagecomp/>}> 
         </Route>
+        <Route path="/Redux" element={<div>
+          <Input/>
+          <ReceiverComp/>
+        </div>}></Route>
         <Route path="/Products" element={<HomeProduct/>}>
          <Route path="Electronic" element={<Electronic/>}/>
          <Route path="Jewelery" element={<Jewelery/>}/>

@@ -5,11 +5,13 @@ import './index.css';
 import App2 from './App2';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import myStore from './Component/Redux/Store';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <BrowserRouter>
-<App2/>
+<Provider store={myStore}><App2/></Provider>
 </BrowserRouter>
 );
 
