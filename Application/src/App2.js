@@ -10,7 +10,8 @@ import Electronic from "./Component/Products/Electronic";
 import Imagecomp from "./Component/class/image";
 import Input from "./Component/Redux/input";
 import ReceiverComp from "./Component/Redux/Text";
-import {Route, Routes} from "react-router-dom"
+import ProductDetails from "./Component/Products/productdetails";
+import {Route, Routes, Navigate} from "react-router-dom"
 
 
 function App2(){
@@ -19,6 +20,7 @@ function App2(){
       <Nav/>
      <Routes>
       <Route path="/Homepage" element={<Home/>}></Route>
+      <Route path=" " element={<Navigate to='Homepage'/>}></Route>
         <Route path="/Profile" element={<MainProfile/>}> 
         </Route>
         <Route path="Acomp" element={<A/>}> 
@@ -32,9 +34,11 @@ function App2(){
           <ReceiverComp/>
         </div>}></Route>
         <Route path="/Products" element={<HomeProduct/>}>
+         <Route path="" element={<Navigate to="Electronic"/>}/>
          <Route path="Electronic" element={<Electronic/>}/>
          <Route path="Jewelery" element={<Jewelery/>}/>
         </Route>
+        <Route path="/productdetails/:id" element={<ProductDetails/>}/>
      </Routes>
     </div>
 

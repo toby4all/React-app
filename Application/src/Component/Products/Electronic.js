@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
+// import ProductDetails from "./productdetails";
 
 function Electronic(props) {
   const[state, setState]=useState([])
@@ -21,16 +22,22 @@ function Electronic(props) {
      <ul type='none'>
       { state.map((ele)=>{
         return(
-        <li>
-       <Link to="/" style={{
-        color:'black'
+        <li style={{ margin:"20px"}}>
+       <Link to={`/productdetails/${ele.id}`} 
+       style={{
+        color:'blue',
+       
        }}>{ele.title}</Link>
           </li>)
       })
 
       }
      </ul>
-      : <div>
+      : <div style={{
+        dispplay:'Grid',
+        justifyContent:'center',
+        alignItems:'center'
+      }}>
       <h2>Loading.....</h2>
      </div>
 
