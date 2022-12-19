@@ -1,6 +1,11 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import Reducer from "./Myreducer";
+import cityReducer from "./CityReducer";
 import logger from "redux-logger";
 
- const myStore =   createStore(Reducer,applyMiddleware(logger));
+
+ const cr= combineReducers({nameReducer:Reducer,
+     cityR:cityReducer, });
+
+ const myStore =   createStore(cr,applyMiddleware(logger));
  export default myStore;

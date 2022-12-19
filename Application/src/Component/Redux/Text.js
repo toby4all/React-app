@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 function ReceiverComp(){
    const data= useSelector((storeData)=>{
-        return storeData.info
+        return storeData
     })
     return(<div style={{
         padding:'20px 100px'
@@ -9,7 +9,8 @@ function ReceiverComp(){
         <h2>
             Text component
         </h2>
-        <p>{data}</p>
+        <p>{data.nameReducer.info}</p>
+        <p>{data.cityR.city}</p>
     </div>)
 
 };

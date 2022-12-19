@@ -1,5 +1,6 @@
 var initialState={
     info:'No data',
+    users:[],
 };
 function Reducer(state=initialState, action){
     switch(action.type){
@@ -9,6 +10,12 @@ function Reducer(state=initialState, action){
             info: action.payLoad    
             }
             break;
+            case 'USERS':
+                state={
+                    ...state,
+                users: action.payload
+                };
+                break;
     }
 return state
 };
