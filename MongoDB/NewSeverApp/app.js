@@ -2,11 +2,12 @@ var express = require("express");
 var mongodb= require("mongodb");
 var cors= require("cors");
  var mongoClient=  mongodb.MongoClient;
+ var userRouter= require("./Routes/Users/User");
 
 var dburl= "mongodb+srv://tobby123:Meandsunday08@cluster0.bu7qdsk.mongodb.net/?retryWrites=true&w=majority";
 Route= express();
 Route.use(cors());
-
+Route.use("/users", userRouter)
 Route.get('/productdb', (req, res)=>{
 mongoClient.connect(dburl, (err, cluster)=>{
     if(err){
