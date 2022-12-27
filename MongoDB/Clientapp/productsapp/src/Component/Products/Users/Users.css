@@ -1,0 +1,12 @@
+table{
+    width: 80%;
+    margin:50px auto;
+    box-shadow: 0 0 10px green;
+    padding: 20px;
+
+};
+
+table > thead{
+    background-color: black;
+    color: white;
+};
