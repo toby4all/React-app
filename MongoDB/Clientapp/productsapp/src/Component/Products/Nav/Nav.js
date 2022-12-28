@@ -9,6 +9,7 @@ function Nav() {
     <div className={styles.maindiv}>
    <Link to="/">Home</Link>
    <Link to="/Users">Users</Link>
+   <Link to="/NewUsers">Newuser</Link>
     </div>
   )
 }

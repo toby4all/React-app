@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Nav from './Component/Products/Nav/Nav';
 import Users from './Component/Products/Users/Users';
+import NewUsers from './Component/Products/Users/NewUsers';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         </div>
       }/>
      <Route path='/Users' element={<Users/>}/>
+     <Route path='/NewUsers' element={<NewUsers/>}/>
      
       </Routes>
     </div>

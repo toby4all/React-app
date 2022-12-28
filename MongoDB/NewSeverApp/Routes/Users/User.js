@@ -3,7 +3,10 @@ var cors= require('cors')
 var{MongoClient}=require('mongodb')
 
 var dburl= "mongodb+srv://tobby123:Meandsunday08@cluster0.bu7qdsk.mongodb.net/?retryWrites=true&w=majority"
-var route= express()
+var route= express();
+const dbname= "UserdataDB";
+const collectionname="UserdataCollection";
+
 
 route.get("/userdata", (err, res)=>{
     MongoClient.connect(dburl, (err, cluster)=>{
@@ -35,4 +38,28 @@ route.get("/userdata", (err, res)=>{
     });//path will be //http://localhost:4001/users/userdata
 
 });
+route.post("/newusers", (req, res)=>{
+    console.log(req.body);
+    MongoClient.connect(dburl,(err, cluster)=>{
+        var dbref= cluster.db(dbname);
+        var collRef= dbref.collection(collectionname);
+        collRef.insertOne(req.body, (err)=>{
+            if(err){
+         res.send({
+            ok: false,
+            msg:"error while inserting data"
+         })
+            }else{
+                res.json({
+                    ok:true,
+                    msg:"inserted data sucessfully",
+                });
+            };
+        });
+
+    });
+}); //path will be //http://localhost:4001/users/newUsers
+
+
+
 module.exports=route;
