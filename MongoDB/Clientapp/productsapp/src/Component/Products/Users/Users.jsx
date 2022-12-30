@@ -1,5 +1,6 @@
 import {useEffect,useState} from 'react'
 import "./Users.css"
+import { Link } from 'react-router-dom'
 
 function Users(props) {
     const[users, setUsers]= useState([])
@@ -47,7 +48,12 @@ function Users(props) {
                   /></td>
                   <td>{ele.name}</td>
                   <td>{ele.gender}</td>
-                  <td><button>Details</button></td>
+                  <td>
+                  <Link to={`/UserDetails/${ele._id}`}>
+                  <button>Details</button>
+                  </Link>
+                  
+                    </td>
                   <td><button>Edit</button></td>
                   <td><button>Delete</button></td>
                 </tr>

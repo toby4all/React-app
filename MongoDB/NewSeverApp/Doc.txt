@@ -1,3 +1,4 @@
 Fetching data from the Mongo db 
 http://localhost:4001/users/userdata
-3. new users URl to the database http://localhost:4001/users/newUsers
+ new users URl to the database http://localhost:4001/users/newUsers
+specificuseer detail URl http://localhost:4001/users/specificuser/<id>
