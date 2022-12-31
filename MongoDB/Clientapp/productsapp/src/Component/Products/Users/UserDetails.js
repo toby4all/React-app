@@ -14,6 +14,9 @@ function UserDetails(props) {
      setUser(data.results)
     })
   },[]);
+  const backToUser= (event)=>{ 
+      <Link to="Users"/>
+  }
      var cardstyle={
         width:"300px",
         margin: "60px auto",
@@ -31,15 +34,14 @@ function UserDetails(props) {
       <h4>{User[0].gender}</h4>
       <h4>{User[0].email}</h4>
       <h4>{User[0].city}</h4>
-      <div style={{ margin:"auto",
+      <button onClick={backToUser(this)} style={{ 
         backgroundColor:"black",
         color:"white",
         padding:"10px",
-        borderRadius:"20%"}}><Link to="/Users">
-      <button>Back to Users</button>
-      </Link></div>
+        borderRadius:"20%"}}>back to users
+       </button>
+     
       
-
         </div>
         )
          : (

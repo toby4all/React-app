@@ -15,6 +15,20 @@ function Users(props) {
             setUsers(data.results)
         })
     }
+
+    const deleteData= (id)=>{
+      fetch(`http://localhost:4001/users/deleteuser/${id}`,
+      
+        {method:"DELETE",
+      })
+      .then((res)=>res.json())
+      .then((data)=>{
+        console.log(data)
+        alert(data.msg)
+        getData();
+      });
+    
+    }
     
   return (
     <div>
@@ -54,8 +68,10 @@ function Users(props) {
                   </Link>
                   
                     </td>
-                  <td><button>Edit</button></td>
-                  <td><button>Delete</button></td>
+                  <td><Link to={`/UserUpdate/${ele._id}`}>
+                  <button>Edit</button>
+                  </Link></td>
+                  <td><button onClick={deleteData(ele._id)}>Delete</button></td>
                 </tr>
               )
             })
