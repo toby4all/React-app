@@ -2,3 +2,5 @@ Fetching data from the Mongo db
 http://localhost:4001/users/userdata
  new users URl to the database http://localhost:4001/users/newUsers
 specificuseer detail URl http://localhost:4001/users/specificuser/<id>
+updateuser url  http://localhost:4001/users/updateuser/<id>
+Delete user URL http://localhost:4001/users/deleteuser/<id>

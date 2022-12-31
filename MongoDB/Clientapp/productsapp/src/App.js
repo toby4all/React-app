@@ -22,7 +22,6 @@ function App() {
      <Route path='/NewUsers' element={<NewUsers/>}/>
      <Route path='/UserDetails/:id' element={<UserDetails/>}/>
      <Route path="/UserUpdate/:id" element={<UserUpdate/>}/>
-     
       </Routes>
     </div>
   );

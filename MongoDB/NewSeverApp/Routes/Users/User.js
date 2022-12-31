@@ -76,7 +76,7 @@ route.get("/specificuser/:id", (req,res)=>{
         }).toArray((err, data)=>{
             console.log(data)
             if(err){
-                res.json({
+                   res.json({
                     ok:false,
                     msg:"Error while fetching the data"
                 });
@@ -93,6 +93,72 @@ route.get("/specificuser/:id", (req,res)=>{
  });
 }); //the path will be http://localhost:4001/users/specificuser/<id>
 
+route.put("/updateuser/:id",(req, res)=>{
+    console.log(req.body)
+    var id= req.params.id
+    MongoClient.connect(dburl,(err, cluster)=>{
+        if(err){
+     res.json({
+        ok:false,
+        msg:"Error while conneting to database"
+     })
+        }else{
+            dbref=cluster.db(dbname);
+            collref=dbref.collection(collectionname)
+            collref.updateOne(
+               {_id:ObjectId(id)},{
+                $set: req.body
+               },(err, data)=>{
+             if(err){
+             res.json({
+                ok:false,
+                msg:"Failed to update information"
+             })
+             }else{
+                res.json(
+                    {
+                    ok:false,
+                    msg:"updated sucessfully"
+                    } );
+             };
+               });
+        };
+    });
+}); 
+// http://localhost:4001/users/specificuser/<id>
 
+route.delete("/deletuser/:id", (req, res)=>{
+    var id= req.params.id;
+    MongoClient.connect(dburl, (err, cluster)=>{
+        if(err){
+            res.json({
+                ok:false,
+                msg: "Error while connecting to Database"
+            })
+        }else{
+            var dbref= cluster.connect(dbname)
+            var collref= dbref.collection(collectionname)
+            collref.deletone({
+                _id:ObjectId(id),
+            }, (err, data)=>{
+                if(err){
+                    res.json(
+                        {
+                            ok:false,
+                            msg:"failed to delete inforrmation"
+                        }
+                    )
+                }else{
+                    res.json({
+                        ok:true,
+                        msg:"Deleted succesfully"
+                    })
+                }
+            }
 
+            )
+        }
+    })
+})
+//path will be http://localhost:4001/users/deleteuser/<id>
 module.exports=route;
