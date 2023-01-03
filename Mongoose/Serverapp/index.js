@@ -4,6 +4,7 @@ var userroute= require("./Routes/UsersRoute")
 var Mongoose= require("mongoose")
 var dotenv= require("dotenv")
 const port= 5001
+app.use(express.json())
 
 dotenv.config({path:"./config.env"});
 app.use("/user", userroute)

@@ -9,11 +9,11 @@ userroute.get("/", (req, res)=>{
 }) //http://localhost:5001/user/
 
 userroute.post("/newuser", (req, res)=>{
+    console.log(req.body)
   var newuser= new user({
-    name:"Oluwatobi ",
-    email:"sql@gmail.com",
-    phone:"235739900",
-
+    name:req.body.name,
+    email:req.body.email,
+    phone:req.body.phone
    });
 
    newuser.save()
