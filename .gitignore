@@ -1,0 +1,2 @@
+*.env
+/React-app/Mongoose/Serverapp/config.env/*
