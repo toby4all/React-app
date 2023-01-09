@@ -23,7 +23,7 @@ route.get("/userdata", (req, res)=>{
             if(err){
                 res.send({
                     ok: false,
-                    msg:"Error while getting data from collection"
+                    msg:"Error while getting data from collection", 
                 });
             }else{
                 res.json({

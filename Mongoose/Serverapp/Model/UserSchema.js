@@ -9,6 +9,7 @@ var mongoosevalidator= require("mongoose-unique-validator")
         unique:true,
         required:true,
        },
+       password: String,
         phone: Number,
        });
 
